@@ -5,7 +5,8 @@ import argparse
 
 def main():
   parser = argparse.ArgumentParser(description="Triangular Classifier.")
-  parser.add_argument('-n', dest="n", required=False, type=int, help="The number of vertices.")
+  parser.add_argument('-n', dest="n", required=True, type=int, help="The number of vertices.")
+
   args = parser.parse_args()
   n = args.n
 
@@ -19,6 +20,7 @@ def main():
     classes.append(random.randint(0,1))
 
   plt.scatter(x, y, c=classes)
+  plt.title(f"n = {n}")
   plt.show() 
 
 if __name__ == "__main__":
