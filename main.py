@@ -40,7 +40,7 @@ def main():
     classes.append(label)
 
   plt.scatter(x, y, c=classes)
-  plt.title(f"n = {n}")
+  plt.title(f"n = {n}, f = {f}, p = {p}")
 
 
 
