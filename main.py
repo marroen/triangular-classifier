@@ -49,6 +49,33 @@ def main():
   plt.grid(True)
   plt.legend()
   plt.show() 
+  
+  knn = KNeighborsClassifier(n_neighbors=7)
+  knn.fit(list(zip(x,y)), classes)
+  counter = 0
+  for _ in range (10000):
+      x_1 = random.randint(0, 9) + random.random()
+      y_1 = random.randint(0, 9) + random.random()
+      
+      testlabel = 1
+      
+      if(x_1>7-p):
+          testlabel = 0
+      if(y_1<3+p):
+          testlabel = 0
+      if(y_1>x_1):
+          testlabel = 0
+      
+        
+      prediction = knn.predict([(x_1, y_1)])
+      
+      if(testlabel != prediction):
+          counter = counter+ 1
+    
+  print(counter)
+      
+      
+      
 
 if __name__ == "__main__":
     main()
