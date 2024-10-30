@@ -13,7 +13,7 @@ def main():
   args = parser.parse_args()
   n = args.n
   f = args.f
-  p = args.p
+  p = -args.p
 
   x = []
   y = []
